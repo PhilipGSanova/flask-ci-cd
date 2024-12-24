@@ -1,0 +1,22 @@
+kubectl version --client
+
+kubectl cluster-info
+
+#Deploying
+kubectl appy -f nginx-deployment.yaml
+
+kubectl get pods
+
+#Exposing
+kubectl expose deployment nginx-deployment--type=NodePort --name=nginx-service --port=80
+
+kubectl get svc
+
+#Scaling
+kubectl scale deployment nginx-deployment --replicas=4
+
+kubectl get pods
+
+#To clean up
+kubectl delete svc nginx-service
+kubectl delete deployment nginx-deployment
