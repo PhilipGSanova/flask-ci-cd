@@ -4,4 +4,12 @@ COPY . /usr/share/nginx/html
 
 EXPOSE 80
 
-CMD ["nginx", "--g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
+
+
+
+
+#COMMANDS
+docker build -t my-static-website .
+
+docker run -d -p 8080:80 --name static-site my-static-website
